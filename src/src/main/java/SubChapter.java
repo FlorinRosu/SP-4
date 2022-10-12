@@ -6,9 +6,13 @@ import java.util.Timer;
 
 public class SubChapter {
     private String name;
-    private List<Image> images = new ArrayList<>();
-    private List<Paragraph> paragraphs = new ArrayList<>();
-    private List<Table> tables = new ArrayList<>();
+
+
+    private List<Element> elements = new ArrayList<>();
+
+//    private List<Image> images = new ArrayList<>();
+//    private List<Paragraph> paragraphs = new ArrayList<>();
+//    private List<Table> tables = new ArrayList<>();
 
     public SubChapter(String name) {
         this.name = name;
@@ -16,29 +20,38 @@ public class SubChapter {
 
     public void createNewParagraph(String text) {
         Paragraph newParagraph = new Paragraph(text);
-        paragraphs.add(newParagraph);
+        elements.add(newParagraph);
     }
 
     public void createNewImage(String imageName) {
         Image newImage = new Image(imageName);
-        images.add(newImage);
+        elements.add(newImage);
     }
 
     public void createNewTable(String title) {
         Table newTable = new Table(title);
-        tables.add(newTable);
+        elements.add(newTable);
     }
 
-    public void print() {
+
+    public void print(){
         System.out.println("Subchapter: "+name);
-        for(Paragraph paragraph: paragraphs){
-            paragraph.print();
-        }
-        for(Image image : images){
-            image.print();
-        }
-        for(Table table: tables){
-            table.print();
+
+        for(Element element:elements){
+            element.print();
         }
     }
+
+//    public void print() {
+//        System.out.println("Subchapter: "+name);
+//        for(Paragraph paragraph: paragraphs){
+//            paragraph.print();
+//        }
+//        for(Image image : images){
+//            image.print();
+//        }
+//        for(Table table: tables){
+//            table.print();
+//        }
+//    }
 }
