@@ -1,10 +1,21 @@
 package main.java;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 public class Image implements Element {
     private String name;
+    private String url;
+//    private ImageContent content;
 
-    public Image(String name) {
+
+    Image(String name) {
         this.name = name;
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     public void print() {
@@ -12,6 +23,10 @@ public class Image implements Element {
     }
 
 
+
+//    public ImageContent content(){
+//        return null;
+//    }
     public void add(Element e){
     }
     public void remove(Element e){
