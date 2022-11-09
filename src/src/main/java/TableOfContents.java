@@ -24,6 +24,6 @@ public class TableOfContents implements Element{
 
     @Override
     public void accept(Visitor visitor) {
-
+        visitor.visitTableOfContents(this);
     }
 }

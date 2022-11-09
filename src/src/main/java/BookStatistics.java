@@ -7,7 +7,7 @@ public class BookStatistics implements Visitor {
     private int imagesProxy = 0;
     private int paragraphs = 0;
     private int section = 0;
-    private int tableOfContents = 0;
+    private int tablesOfContents = 0;
     private int sections = 0;
 
 
@@ -23,7 +23,7 @@ public class BookStatistics implements Visitor {
 
     @Override
     public void visitTableOfContents(TableOfContents tableOfContents) {
-        this.tableOfContents += 1;
+        this.tablesOfContents += 1;
     }
 
     @Override
@@ -46,11 +46,17 @@ public class BookStatistics implements Visitor {
         this.tables += 1;
     }
 
-    @Override
     public void printStatistics() {
         System.out.println("Book Statistics:");
+
+
+
+        System.out.printf("*** Number of images: %d\n",books);
+        System.out.printf("*** Number of sections: %d\n",sections);
         System.out.printf("*** Number of images: %d\n",images);
+        System.out.printf("*** Number of imagesProxy: %d\n",imagesProxy);
         System.out.printf("*** Number of tables: %d\n",tables);
+        System.out.printf("*** Number of tablesOfContents: %d\n",tablesOfContents);
         System.out.printf("*** Number of paragraphs: %d\n",paragraphs);
     }
 }

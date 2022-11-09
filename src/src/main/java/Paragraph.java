@@ -30,7 +30,9 @@ public class Paragraph implements Element{
     public void accept(Visitor visitor) {
         visitor.visitParagraph(this);
     }
-
+    public String getText(){
+        return text;
+    }
     public void setAlignStrategy(AlignStrategy strategy){
         this.alignStrategy = strategy;
     }
