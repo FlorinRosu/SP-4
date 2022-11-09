@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.Element;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +19,7 @@ public class Image implements Element {
             e.printStackTrace();
         }
     }
-    @Override
+
     public void print() {
         System.out.println("Image with name: "+name);
     }
