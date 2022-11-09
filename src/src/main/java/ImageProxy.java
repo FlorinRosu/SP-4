@@ -39,4 +39,9 @@ public class ImageProxy implements Pictures,Element{
     public Element get(int index) {
         return null;
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+
+    }
 }
