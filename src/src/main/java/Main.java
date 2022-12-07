@@ -2,10 +2,13 @@ package main.java;
 
 public class Main {
 
-
+    public static void Printer(){
+        DocumentManager.getInstance().getBook().print();
+    }
 
     public static void main(String[] args) throws Exception {
         Book noapteBuna = new Book("Noapte buna, copii!");
+        DocumentManager.getInstance().setBook(noapteBuna);
         Author rpGheo = new Author("Radu Pavel Gheo");
         noapteBuna.addAuthor(rpGheo);
         Section cap1 = new Section("Capitolul 1");
@@ -38,6 +41,7 @@ public class Main {
         BookSaveVisitor saveVisitor = new BookSaveVisitor();
         noapteBuna.accept(saveVisitor);
         saveVisitor.saveJSON();
+        Printer();
     }
 
 
